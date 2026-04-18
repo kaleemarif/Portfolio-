@@ -1,0 +1,164 @@
+/* Modern Reset & Base Style*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0a0c10;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --primary-blue: #38bdf8;
+    --accent-purple: #818cf8;
+    --text-main: #f1f5f9;
+    --text-dim: #94a3b8;
+}
+
+body {
+    font-family: 'inter', sans-serif;
+    background-color: var(--bg-dark);
+    /* Subtle background gradient for depth*/
+    background: radial-gradient(circle at top righ, #1e293b, #0a0c10);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/*Glassmorphism Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 8%;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 12, 16, 0.8);
+    backdrop-filter: blur(10px);/*Blur Effect*/
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--primary-blue),var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dim);
+    margin-left: 30px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-blue);
+}
+
+/* Hero Section with Animation */
+.hero {
+    text-align: center;
+    padding: 120px 5%;
+    animation: fadeln 1.5s ease-in;
+}
+
+@keyframes fadeln {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Modern Buttons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-outlinen{
+    padding: 10px 25px;
+    border: 1px solid #334155;
+    border-radius: 50px;
+    color: var(--text-main);
+    text-decoration: none;
+    transform: all 0.3 ease;
+}
+
+.btn-outlinen:hover {
+    background: var(--primary-blue);
+    color: var(--bg-dark);
+    border-color:var(--primary-blue);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Card Section */
+.container {
+    padding: 80px 10%;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin: 0 auto;
+    transition: 0.4 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    border-color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+/* Footer & Contact */
+footer {
+    text-align: center;
+    padding: 60px;
+    border-top: 1px solid #1e293b;
+    margin-top: 100px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
