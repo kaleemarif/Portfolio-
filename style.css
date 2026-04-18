@@ -1,4 +1,6 @@
-/* Universal Reset */
+/* 1. IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +12,30 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: #0a0c10;
-    /* Deep blue cosmic glow background */
-    background: radial-gradient(circle at top right, #1e293b, #0a0c10);
-    background-attachment: fixed;
+    font-family: 'Inter', -apple-system, sans-serif;
     color: #f1f5f9;
-    line-height: 1.6;
+    background-color: #030712;
+    min-height: 100vh;
     overflow-x: hidden;
+
+    /* THE MOCKUP BACKGROUND: 
+       Layer 1: Top-right Cyan Glow
+       Layer 2: Bottom-left Purple Glow
+       Layer 3: Dark Overlay (to make text readable)
+       Layer 4: Professional Office/Tech Image
+    */
+    background-image: 
+        radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.25), transparent 50%),
+        radial-gradient(circle at 20% 100%, rgba(129, 140, 248, 0.15), transparent 50%),
+        linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.88)),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* Responsive Navigation */
+/* 2. GLASS NAVIGATION */
 nav {
     display: flex;
     justify-content: space-between;
@@ -39,38 +54,23 @@ nav {
     font-size: 1.5rem;
     font-weight: 800;
     color: #38bdf8;
-    letter-spacing: -1px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav a { text-decoration: none; color: #94a3b8; font-size: 0.9rem; transition: 0.3s; }
+nav a:hover { color: #38bdf8; }
 
-nav a {
-    text-decoration: none;
-    color: #94a3b8;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-}
-
-nav a:hover {
-    color: #38bdf8;
-}
-
-/* Hero Section - Universal Scaling */
+/* 3. HERO SECTION */
 .hero {
     text-align: center;
     padding: clamp(80px, 15vh, 150px) 5%;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
     font-weight: 800;
-    margin-bottom: 15px;
     letter-spacing: -2px;
+    margin-bottom: 15px;
 }
 
 .highlight {
@@ -79,14 +79,7 @@ nav a:hover {
     -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: #94a3b8;
-    max-width: 600px;
-    margin: 0 auto 35px;
-}
-
-/* Colorful Bar Decoration */
+/* THE GRADIENT BARS */
 .bar {
     width: 150px;
     height: 5px;
@@ -95,104 +88,61 @@ nav a:hover {
     margin: 0 auto 20px auto;
 }
 
-/* Universal Buttons */
+/* 4. BUTTONS (Modern Glass Style) */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 28px;
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 10px;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #fff;
     color: #000;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
 }
 
-.project-btn {
-    background: #38bdf8;
-    color: #000;
-    border: none;
-    margin-top: 10px;
-}
-
-/* Containers and Cards */
+/* 5. PROJECT CARD (Ultimate Glassmorphism) */
 .container {
-    padding: 80px 10%;
+    padding: 60px 10%;
     text-align: center;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-.content-text {
-    max-width: 700px;
-    margin: 0 auto;
-    color: #94a3b8;
 }
 
 .project-card {
     background: rgba(255, 255, 255, 0.03);
     padding: clamp(30px, 5%, 60px);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(56, 189, 248, 0.4); /* Glowing Rim */
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
     max-width: 850px;
     margin: 40px auto;
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    border-color: rgba(56, 189, 248, 0.5);
-    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 .project-card h3 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     color: #38bdf8;
     margin-bottom: 15px;
 }
 
-/* Footer Styling */
+/* 6. FOOTER */
 footer {
     padding: 60px 10%;
-    background: rgba(0, 0, 0, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
+    color: #64748b;
 }
 
-.footer-content p {
-    margin-bottom: 10px;
-    color: #94a3b8;
-}
-
-.copyright {
-    font-size: 0.85rem;
-    margin-top: 20px;
-    opacity: 0.6;
-}
-
-/* Small Screen Adjustments (Mobile) */
+/* 7. RESPONSIVENESS */
 @media (max-width: 768px) {
-    nav {
-        padding: 1rem 5%;
-    }
-    nav ul {
-        gap: 15px;
-    }
-    .hero h1 {
-        letter-spacing: -1px;
-    }
-    .project-card {
-        padding: 30px 20px;
-    }
+    .project-card { width: 100%; padding: 30px 20px; }
+    nav ul { gap: 15px; }
 }
