@@ -1,83 +1,76 @@
-/* Modern Reset & Base Style*/
-*{
+/* Universal Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --bg-dark: #0a0c10;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --primary-blue: #38bdf8;
-    --accent-purple: #818cf8;
-    --text-main: #f1f5f9;
-    --text-dim: #94a3b8;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'inter', sans-serif;
-    background-color: var(--bg-dark);
-    /* Subtle background gradient for depth*/
-    background: radial-gradient(circle at top righ, #1e293b, #0a0c10);
-    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #0a0c10;
+    /* Deep blue cosmic glow background */
+    background: radial-gradient(circle at top right, #1e293b, #0a0c10);
+    background-attachment: fixed;
+    color: #f1f5f9;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/*Glassmorphism Navigation */
+/* Responsive Navigation */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 8%;
     align-items: center;
+    padding: 1.2rem 8%;
     position: sticky;
     top: 0;
-    background: rgba(10, 12, 16, 0.8);
-    backdrop-filter: blur(10px);/*Blur Effect*/
+    background: rgba(10, 12, 16, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 1000;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    background: linear-gradient(to right, var(--primary-blue),var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #38bdf8;
+    letter-spacing: -1px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    gap: 25px;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text-dim);
-    margin-left: 30px;
+    color: #94a3b8;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--primary-blue);
+    color: #38bdf8;
 }
 
-/* Hero Section with Animation */
+/* Hero Section - Universal Scaling */
 .hero {
     text-align: center;
-    padding: 120px 5%;
-    animation: fadeln 1.5s ease-in;
-}
-
-@keyframes fadeln {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    padding: clamp(80px, 15vh, 150px) 5%;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    letter-spacing: -1px;
-    margin-bottom: 0.5rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -2px;
 }
 
 .highlight {
@@ -87,78 +80,119 @@ nav a:hover {
 }
 
 .hero p {
-    color: var(--text-dim);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #94a3b8;
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 35px;
 }
 
-/* Modern Buttons */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+/* Colorful Bar Decoration */
+.bar {
+    width: 150px;
+    height: 5px;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
 }
 
-.btn-outlinen{
-    padding: 10px 25px;
-    border: 1px solid #334155;
-    border-radius: 50px;
-    color: var(--text-main);
+/* Universal Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
     text-decoration: none;
-    transform: all 0.3 ease;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-outlinen:hover {
-    background: var(--primary-blue);
-    color: var(--bg-dark);
-    border-color:var(--primary-blue);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+.btn:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Card Section */
+.project-btn {
+    background: #38bdf8;
+    color: #000;
+    border: none;
+    margin-top: 10px;
+}
+
+/* Containers and Cards */
 .container {
     padding: 80px 10%;
+    text-align: center;
 }
 
 .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.content-text {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #94a3b8;
 }
 
 .project-card {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    max-width: 800px;
-    margin: 0 auto;
-    transition: 0.4 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.03);
+    padding: clamp(30px, 5%, 60px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 850px;
+    margin: 40px auto;
+    transition: 0.3s ease;
 }
 
 .project-card:hover {
-    transform: scale(1.02);
-    border-color: var(--primary-blue);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(56, 189, 248, 0.5);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .project-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    color: #38bdf8;
     margin-bottom: 15px;
-    color: var(--primary-blue);
 }
 
-/* Footer & Contact */
+/* Footer Styling */
 footer {
+    padding: 60px 10%;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
-    padding: 60px;
-    border-top: 1px solid #1e293b;
-    margin-top: 100px;
 }
 
-.contact-info {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+.footer-content p {
+    margin-bottom: 10px;
+    color: #94a3b8;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    margin-top: 20px;
+    opacity: 0.6;
+}
+
+/* Small Screen Adjustments (Mobile) */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 5%;
+    }
+    nav ul {
+        gap: 15px;
+    }
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+    .project-card {
+        padding: 30px 20px;
+    }
 }
