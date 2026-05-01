@@ -11,17 +11,23 @@
 
 <nav>
   <div class="logo">KA</div>
-  <div class="nav-links">
+
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+  </div>
+
+  <div class="controls">
+    <button id="themeToggle">🌙</button>
+    <div class="menu-toggle" id="menuToggle">☰</div>
   </div>
 </nav>
 
 <header>
   <img src="image1.jpeg" alt="profile">
   <h1>Hi, I'm <span>Kaleem Arif</span></h1>
-  <p>Frontend Developer | Future Full-Stack Engineer</p>
+  <p id="typing"></p>
 
   <div class="buttons">
     <a href="https://github.com/kaleemarif" target="_blank" class="btn">GitHub</a>
@@ -31,11 +37,7 @@
 
 <section id="about" class="hidden">
   <h2>About Me</h2>
-  <p>
-    I’m a CSE student focused on building real-world web applications.
-    I enjoy turning ideas into functional products using modern web technologies.
-    Currently learning full-stack development and improving problem-solving skills.
-  </p>
+  <p>I’m a CSE student focused on building real-world web applications.</p>
 </section>
 
 <section id="skills" class="hidden">
@@ -53,7 +55,6 @@
   <h2>Projects</h2>
 
   <div class="projects">
-
     <div class="card">
       <h3>Lost & Found Portal</h3>
       <p>Report and search lost items in campus.</p>
@@ -72,14 +73,13 @@
       <p>Real-time weather using API.</p>
       <p class="status">🚧 Under Development</p>
     </div>
-
   </div>
 </section>
 
 <footer>
   <p>Contact: 8889338516</p>
   <p>Email: kaleemarif7610@gmail.com</p>
-  <p>© 2026 Kaleem Arif. All Rights Reserved.</p>
+  <p>© 2026 Kaleem Arif</p>
 </footer>
 
 <script src="script.js"></script>
