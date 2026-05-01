@@ -8,7 +8,6 @@
 body {
   background: #0f172a;
   color: white;
-  line-height: 1.6;
 }
 
 /* NAV */
@@ -52,9 +51,7 @@ h1 span {
   margin: 10px;
   padding: 10px 20px;
   background: #38bdf8;
-  border: none;
   color: black;
-  cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
   transition: 0.3s;
@@ -68,12 +65,16 @@ h1 span {
 section {
   padding: 50px 20px;
   text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.6s;
 }
 
-section.show {
+/* Animation */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.show {
   opacity: 1;
   transform: translateY(0);
 }
@@ -113,9 +114,37 @@ section.show {
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
+.status {
+  color: orange;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background: rgba(255,255,255,0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  header img {
+    width: 100px;
+  }
 }
