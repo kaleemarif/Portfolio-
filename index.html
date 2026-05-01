@@ -1,58 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaleem Arif | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Kaleem Arif Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">KA</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
+  <div class="logo">KA</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </div>
+</nav>
 
-    <header class="hero">
-        <h1>Hi, I'm <span class="highlight">Kaleem Arif</span></h1>
-        <p>Resourceful Frontend Builder & Tech Enthusiast</p>
-        <div class="social-links">
-            <a href="https://github.com/kaleemarif" class="btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/kaleem-arif-b25b20385" class="btn">LinkedIn</a>
-        </div>
-    </header>
+<header>
+  <img src="image1.jpeg" alt="profile">
+  <h1>Hi, I'm <span>Kaleem Arif</span></h1>
+  <p>Frontend Developer | Future Full-Stack Engineer</p>
 
-    <section id="about" class="container">
-        <div class="bar"></div>
-        <h2 class="section-title">About Me</h2>
-        <p class="content-text">
-            I'm a B.Tech CSE student at GGCT with a passion for building digital solutions. 
-            I specialize in taking an idea and using modern tools to turn it into a working prototype.
-        </p>
-    </section>
+  <div class="buttons">
+    <a href="https://github.com/kaleemarif" target="_blank" class="btn">GitHub</a>
+    <a href="https://www.linkedin.com/in/kaleem-arif-b25b20385" target="_blank" class="btn">LinkedIn</a>
+  </div>
+</header>
 
-    <section id="projects" class="container">
-        <div class="bar"></div>
-        <h2 class="section-title">Featured Project</h2>
-        <div class="project-card">
-            <h3>Gyan Ganga Lost & Found Portal</h3>
-            <p>A responsive frontend platform allowing students to report, search, and track lost items across the GGCT campus. Built with modern UI principles for a seamless user experience.</p>
-            <a href="https://kaleemarif.github.io/Gyan-ganga-l-f/" class="btn project-btn">View Live Project</a>
-        </div>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a CSE student focused on building real-world web applications.
+    I enjoy turning ideas into functional products using modern web technologies.
+    Currently learning full-stack development and improving problem-solving skills.
+  </p>
+</section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <p><strong>Contact:</strong> 8889338516</p>
-            <p><strong>Email:</strong> kaleemarif7610@gmail.com</p>
-            <p class="copyright">&copy; 2026 Kaleem Arif. All Rights Reserved.</p>
-        </div>
-    </footer>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Responsive Design</div>
+  </div>
+</section>
 
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Lost & Found Portal</h3>
+      <p>Report and search lost items in campus.</p>
+      <p><b>Tech:</b> HTML, CSS, JS</p>
+      <a href="https://kaleemarif.github.io/Gyan-ganga-l-f/" target="_blank" class="btn">Live</a>
+    </div>
+
+    <div class="card">
+      <h3>To-Do App</h3>
+      <p>Task manager with local storage.</p>
+      <p><b>Tech:</b> JavaScript</p>
+      <a href="#" class="btn">Live</a>
+    </div>
+
+    <div class="card">
+      <h3>Weather App</h3>
+      <p>Get real-time weather using API.</p>
+      <p><b>Tech:</b> API, JS</p>
+      <a href="#" class="btn">Live</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>Contact: kaleemarif7610@gmail.com</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
