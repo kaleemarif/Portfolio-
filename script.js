@@ -19,10 +19,9 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Theme toggle with save
+// Theme toggle (saved)
 const themeToggle = document.getElementById("themeToggle");
 
-// Load saved theme
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light");
   themeToggle.textContent = "☀️";
