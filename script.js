@@ -1,11 +1,12 @@
-// Simple smooth scrollfor navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click',function(e) { 
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollintoView({
-            behaviour:'smooth'
-        });
-    });
-});
+const sections = document.querySelectorAll("section");
 
-console.log("Portfolio Loaded Succesfully!");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 300;
+
+    if (top > offset) {
+      sec.classList.add("show");
+    }
+  });
+});
