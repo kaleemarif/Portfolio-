@@ -1,12 +1,11 @@
-const sections = document.querySelectorAll("section");
+const hiddenElements = document.querySelectorAll(".hidden");
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = window.scrollY;
-    const offset = sec.offsetTop - 300;
-
-    if (top > offset) {
-      sec.classList.add("show");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
     }
   });
 });
+
+hiddenElements.forEach(el => observer.observe(el));
