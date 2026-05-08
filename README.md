@@ -18,10 +18,10 @@ https://kaleemarif.github.io/Portfolio-/
 
 🛠️ Technologies Used
 
-HTML
-CSS
-JavaScript
-GitHub Pages
+HTML,
+CSS,
+JavaScript,
+GitHub Pages,
 
 📌 Purpose
 I built this project to improve my frontend development skills and learn how real websites are structured, designed and deployed.
